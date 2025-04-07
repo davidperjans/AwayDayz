@@ -1,5 +1,9 @@
 
 using System.Text;
+using AwayDayz.Application.Commands.AuthCommandHandlers;
+using AwayDayz.Application.Interfaces;
+using AwayDayz.Application.Mapping;
+using AwayDayz.Application.Services;
 using AwayDayz.Domain.Entities;
 using AwayDayz.Infrastructure.Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -17,6 +21,8 @@ namespace AwayDayz.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<LoginCommandHandler>());
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
@@ -88,6 +94,8 @@ namespace AwayDayz.API
             });
 
             // Configure Dependency Injection
+            builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 
             var app = builder.Build();
@@ -101,6 +109,7 @@ namespace AwayDayz.API
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
