@@ -24,8 +24,4 @@
     <ProjectReference Include="..\AwayDayz.Domain\AwayDayz.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

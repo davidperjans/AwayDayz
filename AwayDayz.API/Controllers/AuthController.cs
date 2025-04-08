@@ -1,4 +1,4 @@
-﻿using AwayDayz.Application.Commands.AuthCommands;
+﻿using AwayDayz.Application.Commands.Auth.AuthCommands;
 using AwayDayz.Application.DTOs.AuthDtos;
 using MediatR;
 using Microsoft.AspNetCore.Http;

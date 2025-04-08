@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using AwayDayz.Application.Commands.AuthCommands;
+using AwayDayz.Application.Commands.Auth.AuthCommands;
 using AwayDayz.Domain.Entities;
 
 namespace AwayDayz.Application.Mapping

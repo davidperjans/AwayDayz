@@ -1,11 +1,13 @@
 
 using System.Text;
-using AwayDayz.Application.Commands.AuthCommandHandlers;
+using AwayDayz.Application.Commands.Auth.AuthCommandHandlers;
 using AwayDayz.Application.Interfaces;
 using AwayDayz.Application.Mapping;
 using AwayDayz.Application.Services;
 using AwayDayz.Domain.Entities;
+using AwayDayz.Domain.Interfaces;
 using AwayDayz.Infrastructure.Database;
+using AwayDayz.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -95,6 +97,7 @@ namespace AwayDayz.API
 
             // Configure Dependency Injection
             builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<IFriendRequestRepository, FriendRequestRepository>();
             builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 
