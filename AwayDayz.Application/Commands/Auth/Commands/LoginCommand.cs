@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using AwayDayz.Application.Common;
 using MediatR;
 
-namespace AwayDayz.Application.Commands.AuthCommands
+namespace AwayDayz.Application.Commands.Auth.AuthCommands
 {
     public class LoginCommand : IRequest<OperationResult<string>>
     {

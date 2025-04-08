@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using AwayDayz.Application.Commands.AuthCommands;
+using AwayDayz.Application.Commands.Auth.AuthCommands;
 using AwayDayz.Application.Common;
 using AwayDayz.Application.Interfaces;
 using AwayDayz.Application.Services;
@@ -12,7 +12,7 @@ using AwayDayz.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 
-namespace AwayDayz.Application.Commands.AuthCommandHandlers
+namespace AwayDayz.Application.Commands.Auth.AuthCommandHandlers
 {
     public class RegisterCommandHandler : IRequestHandler<RegisterCommand, OperationResult<string>>
     {
